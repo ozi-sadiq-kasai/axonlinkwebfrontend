@@ -1,0 +1,436 @@
+.dBanner {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mBanner {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ---------------- hero ---------------- */
+
+/* text over banner */
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  max-width: 900px;
+  padding: 0 16px;
+}
+
+.aboutSpan {
+  color: #52489c;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #52489c;
+  background: #eeedf5;
+  margin-bottom: 16px;
+  border: 1px solid #a6a6a6;
+}
+
+.hero h1 {
+  line-height: 1.3;
+  margin: 0;
+  font-size: 28px;
+}
+
+/* ---------------- who we are ---------------- */
+
+.who {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 40px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.whoText {
+  max-width: 100%;
+}
+
+.whoText h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.whoText p {
+  color: #555;
+  line-height: 28px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.whoImage img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ---------------- mission / vision ---------------- */
+
+.missionVision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto 7rem;
+}
+
+.mission,
+.vision {
+  padding: 5rem 2rem;
+}
+
+.mission h4,
+.vision h4 {
+  font-size: 24px;
+}
+
+.mission p,
+.vision p {
+  font-size: 16px;
+  line-height: 20.4px;
+}
+
+.mission {
+  background: #f6faf4;
+}
+.mission h4 {
+  color: #506c4b;
+  margin-bottom: 1rem;
+}
+
+.vision {
+  background: #f4f4fb;
+}
+.vision h4 {
+  color: #4b428e;
+  margin-bottom: 1rem;
+}
+
+.mission p,
+.vision p {
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ---------------- principles ---------------- */
+
+.principles {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 3rem;
+}
+
+.principles h3 {
+  font-size: 24px;
+  width: 15%;
+  color: #131313;
+}
+
+.principleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+  width: 70%;
+}
+
+.principleHeader {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.principleGrid h5 {
+  margin-bottom: 2px;
+  font-size: 16px;
+  color: #131313;
+}
+
+.principleGrid p {
+  color: #555;
+  line-height: 20.4px;
+  width: 100%;
+}
+
+/* ---------------- team ---------------- */
+
+.team {
+  padding: 0 auto;
+  margin: 8rem 3rem;
+}
+
+.teamIntro {
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* 1st card */
+.teamGrid > .card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* 2nd card */
+.teamGrid > .card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* 3rd card (right side) */
+.teamGrid > .card:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+/* 4th card (second column on row 2) */
+.teamGrid > .card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* 5th card */
+.teamGrid > .card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* normal card */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+  border: 1px solid #eee;
+}
+
+/* last two cards – center them under the first row */
+.secondRow {
+  grid-column: span 1;
+}
+
+/* push 4th card to the center column */
+.secondRow:first-of-type {
+  grid-column: 1;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.placeholder {
+  height: 200px;
+  background: #e0e0e0;
+}
+
+.cardBody {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardBody span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ---------------- responsive ---------------- */
+
+@media (max-width: 767px) {
+  .mBanner {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .dBanner {
+    display: none;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .heroContent {
+    width: 100%;
+  }
+
+  .hero h1 {
+    line-height: 1.2;
+    margin: 0 auto;
+    font-size: 22px;
+  }
+
+  .who {
+    grid-template-columns: 1fr;
+    padding: 30px 15px;
+    gap: 24px;
+  }
+
+  .whoImage {
+    order: 1;
+  }
+
+  .whoText {
+    order: 2;
+    font-size: 16px;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .whoText p {
+    font-size: 16px;
+    line-height: 20.4px;
+  }
+
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+
+  .principleGrid {
+    grid-template-columns: 1fr;
+  }
+  .mission,
+  .vision {
+    padding: 1.5rem;
+  }
+
+  .mission h4,
+  .vision h4 {
+    font-size: 22px;
+  }
+
+  .principles {
+    flex-direction: column;
+    margin: 0 1.5rem;
+  }
+
+  .principles h3 {
+    font-size: 24px;
+    width: 50%;
+    margin-bottom: 2rem;
+    line-height: 24px;
+  }
+
+  .principleGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px 12px;
+    width: 100%;
+  }
+
+  .principleHeader {
+    width: 100%;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .principleGrid h5 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-size: 14px;
+  }
+
+  .principleGrid p {
+    line-height: 1.3;
+    width: 100%;
+  }
+
+  .team {
+    margin: 5rem 1.5rem;
+  }
+
+  .team p {
+    font-size: 16px;
+    line-height: 20.4px;
+  }
+
+  .teamIntro {
+    color: #666;
+    margin-bottom: 32px;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+  }
+
+  .teamGrid > .card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .card {
+    height: auto;
+    max-width: 50%;
+    object-fit: contain;
+  }
+/* 
+  .cta {
+    padding: 0 5px;
+  } */
+}
+
+/* ---------------- tablet (2 cards per row) ---------------- */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* remove the desktop custom positioning */
+  .teamGrid > .card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .teamGrid > .card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}

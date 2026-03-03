@@ -1,0 +1,371 @@
+.mBanner {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.dBanner {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* text over banner */
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #52489c;
+  background: #eeedf5;
+  margin-bottom: 16px;
+  border: 1px solid #a6a6a6;
+}
+
+.heroContent h1 {
+  margin: 0 auto;
+  font-size: 28px;
+  line-height: 38px;
+  width: 57%;
+}
+
+.solutionSpan {
+  color: #52489c;
+}
+/* ---------------- tabs ---------------- */
+
+.tabsStickyWrap {
+  position: sticky;
+  top: 75px;
+  z-index: 100;
+  background:transparent;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  background: #f2f2f7;
+  padding: 6px;
+  border-radius: 999px;
+}
+
+.tabs button {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.activeTab {
+  background: white;
+  color: #6f5cff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------------- layout ---------------- */
+
+.section {
+  max-width: 1400px;
+  margin: 80px 40px 0;
+  padding: 0 24px;
+  display: grid;
+  gap: 48px;
+  align-items: start;
+  scroll-margin-top: 90px;
+}
+
+/* Patient → header left, cards right */
+.section:nth-of-type(2) {
+  grid-template-columns: 1fr 1.3fr;
+}
+.section:nth-of-type(2) .intro {
+  order: 1;
+}
+.section:nth-of-type(2) .loopViewport {
+  order: 2;
+}
+
+/* Clinician → cards left, header right */
+.section:nth-of-type(3) {
+  grid-template-columns: 1.3fr 1fr;
+}
+.section:nth-of-type(3) .intro {
+  order: 2;
+}
+.section:nth-of-type(3) .loopViewport {
+  order: 1;
+}
+
+/* Facility → header left, cards right */
+.section:nth-of-type(4) {
+  grid-template-columns: 1fr 1.3fr;
+}
+.section:nth-of-type(4) .intro {
+  order: 1;
+}
+.section:nth-of-type(4) .loopViewport {
+  order: 2;
+}
+
+.intro h3 {
+  margin-bottom: 8px;
+  color: #131313;
+}
+
+.intro p {
+  color: #424242;
+  line-height: 1.6;
+}
+
+/* ---------------- viewport ---------------- */
+
+.loopViewport {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  padding: 0 5rem;
+}
+
+.loopViewport::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+.loopTrack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------------- cards ---------------- */
+
+.stepCard {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  transition-delay: calc(var(--i) * 0.08s);
+  background-color: #eeedf5;
+
+  /* layout */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* number */
+.stepNo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* title – stays on same row as number */
+.stepCard strong {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* paragraph goes under both */
+.stepCard p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  background-color: white;
+}
+
+/* ---------------- rings ---------------- */
+
+.rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  --c1: rgba(111, 92, 255, 0.12);
+  --c2: rgba(111, 92, 255, 0.08);
+  --c3: rgba(111, 92, 255, 0.05);
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 46.9%,
+      var(--c1) 47%,
+      transparent 47.4%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 57.9%,
+      var(--c2) 58%,
+      transparent 58.4%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 68.9%,
+      var(--c3) 69%,
+      transparent 69.4%
+    );
+}
+
+.purple .stepNo {
+  color: #6f5cff;
+}
+.green .stepNo {
+  color: #7aa874;
+}
+.blue .stepNo {
+  color: #6fa3d9;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateX(var(--x)) translateY(0);
+  }
+}
+
+/* zig-zag */
+
+.loopTrack .stepCard:nth-child(odd) {
+  --x: 38px;
+}
+.loopTrack .stepCard:nth-child(even) {
+  --x: -18px;
+}
+
+/* ---------------- mobile ---------------- */
+
+@media (max-width: 1023px) {
+  .dBanner {
+    display: none;
+  }
+  .mBanner {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+
+  .tabs {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .tabs button {
+    font-size: 10px;
+  }
+
+  .heroContent h1 {
+    font-size: 22px;
+    line-height: 28px;
+    width: 90%;
+  }
+
+  .section {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+    margin: 20px 30px 70px;
+  }
+
+  /* force correct order on mobile */
+  .section .intro {
+    order: 1 !important;
+  }
+
+  .section .loopViewport {
+    order: 2 !important;
+  }
+
+  .intro h3 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    line-height: 20.4px;
+    font-size: 14px;
+    max-width: 90%;
+  }
+   .loopViewport::after {
+    display: none;
+  }
+
+  .loopViewport {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0;
+    height: auto;
+  }
+
+  /* remove zig-zag on mobile */
+  .loopTrack .stepCard:nth-child(odd),
+  .loopTrack .stepCard:nth-child(even) {
+    --x: 0px;
+  }
+
+  .loopTrack {
+    gap: 12px;
+  }
+
+  .stepCard strong {
+    font-size: 11px;
+  }
+
+  .stepCard p {
+    font-size: 12px;
+    color: #616161;
+    padding: 3px 4px;
+    border-radius: 3px;
+  }
+
+  .show {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,440 @@
+/* =====================================================
+   BASE STYLES (0px – 1023px)
+===================================================== */
+
+/* ================= HERO ================= */
+
+.headerSection {
+  background: linear-gradient(to bottom, white 0%, #dcd9ec 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContent {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainHeading {
+  max-width: 90%;
+  font-size: 32px;
+}
+
+.headingSpan {
+  color: #52489c;
+}
+
+.subHeading {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.securityButton,
+.getStartedButton,
+.contactUsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  width: 100%;
+  background: #52489c;
+  color: white;
+  text-decoration: none;
+
+}
+
+
+.contactUsButton {
+  background: #d7d4e7;
+  color: #424242;
+}
+
+.icon {
+  padding-left: 5px;
+}
+
+.buttonText {
+  font-size: 14px;
+}
+
+/* ================= PLATFORM ================= */
+
+.platformSection {
+  padding: 64px 16px;
+}
+
+.platformContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.platformHeading {
+  font-size: 28px;
+  color: #52489c;
+}
+
+.platformSubheading {
+  font-size: 16px;
+  color: #424242;
+}
+
+.platformGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.platformGridWide,
+.platformGridTall,
+.platformGridCard {
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.platformGridWide { background: #eeedf5; }
+.platformGridTall { background: #f4f9f3; }
+.card3 { background: #f6fbff; }
+.card4 { background: #fff8ee; }
+
+.platformGrid h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.platformGrid p {
+  font-size: 14px;
+  color: #616161;
+}
+
+.platformGridImage {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.platformImg {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ================= JOURNEY ================= */
+
+.journeyHeading {
+  font-size: 32px;
+  margin: 4rem auto 5rem;
+  max-width: 520px;
+  text-align: center;
+}
+
+.journeyContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.journeyImage,
+.journeyContentText {
+  max-width: 100%;
+}
+
+.journeyContentHeading {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.journeyContentText {
+  font-size: 16px;
+  margin-bottom: 0.8rem;
+  color: #616161;
+}
+
+.journeyRow {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+}
+/* ================= HOW ================= */
+
+.howSection {
+  margin-top: 2rem;
+  background: #eeedf5;
+  padding: 3rem 2rem;
+}
+
+.howContentHeading {
+  font-size: 28px;
+}
+
+.howContentText {
+  color: #616161;
+  margin-bottom: 15px;
+}
+
+.howImage {
+  margin-top: 1rem;
+}
+
+.howImage img {
+  max-width: 70%;
+}
+
+/* ================= SECURITY ================= */
+
+.securitySection {
+  display: flex;
+  flex-direction: column;
+}
+
+.securityImage {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+.securityImage img {
+  max-width: 244px;
+}
+
+.securityContent {
+  padding: 1rem;
+  max-width: 520px;
+}
+
+.securityContentHeading {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.securityContentText {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #616161;
+}
+
+.securityContent ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.securityContent li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.securityButton {
+  background: #84b27c;
+}
+
+.checkIcon {
+  color: #84b27c;
+  font-size: 28px;
+}
+
+.securityCheckMark {
+  background: rgba(132, 178, 124, 0.16);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= DATA ================= */
+
+.dataSection {
+  padding: 32px 16px 48px;
+}
+
+.dataDesktop {
+  display: none;
+}
+
+.dataMobile {
+  display: block;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+
+/* =====================================================
+   DESKTOP STYLES (1024px and up)
+===================================================== */
+
+@media (min-width: 1024px) {
+
+  /* HERO */
+  .mainHeading {
+    font-size: 40px;
+    max-width: 60%;
+  }
+
+  .subHeading {
+    max-width: 70%;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+    gap: 20px;
+    width: 60%;
+  }
+
+  /* PLATFORM */
+  .platformSection {
+    padding: 96px 112px;
+  }
+
+  .platformContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .platformGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .platformGridWide { grid-column: span 2; }
+  .platformGridTall { grid-row: span 2; }
+
+  .platformImg {
+    max-width: 420px;
+  }
+
+  /* JOURNEY */
+  .journeySection {
+    padding: 0 7rem 6rem;
+  }
+
+  .journeyContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .journeyRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8rem;
+    margin-bottom: 6rem;
+  }
+
+  .reverse {
+    direction: rtl;
+  }
+
+  .reverse .journeyText,
+  .reverse .journeyImageWrap {
+    direction: ltr;
+  }
+
+
+  .journeyImage {
+    max-width: 420px;
+  }
+
+  .journeyButton{
+    max-width: 50%;
+  }
+
+  /* HOW */
+  .howSection {
+    display: flex;
+    padding: 4rem 6rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .howImage img {
+    max-width: 310px;
+  }
+
+  /* SECURITY */
+  .securitySection {
+    flex-direction: row;
+    padding: 4rem 5rem;
+    gap: 4rem;
+    background: #91c48829;
+  }
+
+  .securityImage img {
+    max-width: 380px;
+  }
+
+  /* DATA */
+  .dataDesktop {
+    display: block;
+     width: 100%;
+  }
+
+  .dataMobile {
+    display: none;
+  }
+}
+
+
+
+/* COMMON STYLES */
+/* VIDEO MODAL */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  position: relative;
+  width: 60%;
+  max-width: 400px;
+}
+
+.modalVideo {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modalClose {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: white;
+  border: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.securityButton{
+  margin-top: 16px;
+}

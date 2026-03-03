@@ -1,0 +1,247 @@
+/* HERO */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.dBanner {
+  width: 100%;
+}
+
+.mBanner {
+  display: none;
+}
+
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.solutionSpan {
+  color: #52489c;
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #52489c;
+  background: #eeedf5;
+  margin-bottom: 16px;
+  border: 1px solid #a6a6a6;
+}
+
+
+
+/* GRID */
+
+.grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+
+/* CARD */
+
+.card {
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  transition: 0.25s;
+  border: 1px solid gainsboro;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ICON */
+
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.iconSvg {
+  font-size: 22px;
+}
+
+
+/* TEXT */
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+
+/* FOOTER */
+
+.footer {
+  margin-top: auto;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.tag {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+/* LIST */
+
+.listItem {
+  display: flex;
+  gap: 5px;
+  padding: 6px 8px;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+}
+
+
+/* CHECK */
+
+.checkCircle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon {
+  font-size: 14px;
+}
+
+
+/* ================= COLORS ================= */
+
+/* PURPLE */
+.purple {
+  background: #eeedf5;
+}
+
+.purple .iconSvg,
+.purple .checkIcon {
+  color: #52489c;
+}
+
+.tag.purple {
+  color: #52489c;
+}
+
+
+/* GREEN */
+.green {
+  background: #f4f9f3;
+}
+
+.green .iconSvg,
+.green .checkIcon {
+  color: #506c4b;
+}
+
+.tag.green {
+  color: #506c4b;
+}
+
+
+/* ORANGE */
+.iconCircle.orange,
+.footer.orange,
+.checkCircle.orange {
+  background: #E8A94E24;
+}
+
+.orange .iconSvg,
+.orange .checkIcon {
+  color: #b5843d;
+}
+
+.tag.orange {
+  color: #b5843d;
+}
+
+
+/* BLUE */
+.blue {
+  background: #F6FBFF;
+}
+
+.blue .iconSvg,
+.blue .checkIcon {
+  color: #455B6B;
+}
+
+.tag.blue {
+  color: #455B6B;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+/* desktop and tablet */
+@media (min-width: 768px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wrapper {
+    padding: 64px 24px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    padding: 64px 24px;
+  }
+
+  .dBanner {
+    display: none;
+  }
+
+  .mBanner {
+    display: block;
+    width: 100%;
+  }
+
+  .heroContent h1{
+    font-size: 22px;
+    width: 100%;
+  }
+
+  .badge {
+  margin-bottom: 14px;
+}
+}

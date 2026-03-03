@@ -1,0 +1,26 @@
+.navbar {
+  width: 100%;
+  z-index: 9999;
+}
+
+/* only desktop */
+@media (min-width: 1024px) {
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+  }
+
+  .main {
+    padding-top: 85px; /* prevents overlap */
+  }
+
+}
+
+@media (max-width: 1023px) {
+      .main {
+    padding-top: 70px; /* prevents overlap */
+  }
+}

@@ -1,0 +1,283 @@
+:root {
+  --orbit-size: 720px;
+  --outer-size: 700px;
+  --middle-size: 520px;
+  --inner-size: 400px;
+}
+
+.orbitViewport {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: calc(var(--orbit-size) / 1.4);
+  overflow: hidden;
+}
+
+.orbitViewport::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12%;
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 40%,
+    black 100%
+  );
+}
+
+.orbitStage {
+  position: relative;
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  margin: 80px auto 0;
+  border-radius: 50%;
+}
+
+/* ================= Rings ================= */
+
+.ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ---------- outer ring ---------- */
+
+.ringOuter {
+  width: var(--outer-size);
+  height: var(--outer-size);
+  animation: spin 40s linear infinite;
+  position: relative;
+}
+
+.ringOuter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    #acabab 0deg 3deg,
+    transparent 3deg 18deg
+  );
+
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+}
+
+/* ---------- middle ring ---------- */
+
+.ringMiddle {
+  width: var(--middle-size);
+  height: var(--middle-size);
+  animation: spin 30s linear infinite;
+  border: 1px solid #d8d7d7;
+}
+
+/* ---------- inner ring ---------- */
+
+.ringInner {
+  width: var(--inner-size);
+  height: var(--inner-size);
+  animation: spin 20s linear infinite;
+  border: 1px solid #d8d7d7;
+}
+
+/* ================= Outer ring images ================= */
+
+.orbitAvatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  z-index: 3;
+}
+
+.orbitAvatar img {
+  width: 120px;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+/* ================= Decorative dots ================= */
+
+.orbitIconWrap{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform-origin:0 0;
+  z-index:3;
+}
+
+.orbiticon{
+  width:40px;
+  height:auto;
+  transform:translate(-50%, -50%);
+  pointer-events:none;
+}
+
+/* ================= Center image ================= */
+
+.centerAvatar {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= Center hovering dots ================= */
+
+.centerDots{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:100%;
+  height:100%;
+  animation: spin 10s linear infinite;
+  pointer-events:none;
+  z-index:4;
+}
+
+.centerDot{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  transform-origin:0 0;
+}
+
+/* ================= Animations ================= */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --orbit-size: 560px;
+    --outer-size: 520px;
+    --middle-size: 400px;
+    --inner-size: 260px;
+  }
+
+  .orbitViewport {
+    height: calc(var(--orbit-size) / 1.4);
+    overflow: hidden;
+  }
+
+  .orbitStage {
+    margin: 60px auto 0;
+  }
+
+  .orbitViewport::after {
+    height: 6%;
+  }
+
+  /* avatars */
+  .orbitAvatar img {
+    width: 90px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* icons */
+  .orbiticon {
+    width: 32px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* center image FIXED CENTERING */
+  .centerAvatar {
+    top: 50%;
+    left: 50%;
+    width: 45%;
+    height: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  :root {
+    --orbit-size: 420px;
+    --outer-size: 400px;
+    --middle-size: 300px;
+    --inner-size: 200px;
+  }
+
+  .orbitViewport {
+    height: calc(var(--orbit-size) / 1.35);
+  }
+
+  .orbitStage {
+    margin: 40px auto 0;
+  }
+
+   .orbitViewport::after {
+    height: 6%;
+  }
+
+
+  /* avatars on rings */
+  .orbitAvatar img {
+    width: 80px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* icons on rings */
+  .orbiticon {
+    width: 26px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* center image */
+  .centerAvatar {
+    width: 37%;
+    height: auto;
+    top: 55%;
+    left: 50%;
+  }
+
+  /* center dots radius */
+  .centerDot {
+    transform-origin: 0 0;
+  }
+
+}

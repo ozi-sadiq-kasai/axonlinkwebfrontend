@@ -1,0 +1,117 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal {
+  background: white;
+  width: 40%;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: #f2f2f2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #eeedf5;
+  color: #52489c;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input,
+select {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.submitBtn {
+  background: #52489c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 24px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.centerState {
+  text-align: center;
+}
+
+
+/* Tablet + Mobile */
+@media (max-width: 1023px) {
+  .modal {
+    width: 90%;
+    max-width: 100%;
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .overlay {
+    padding: 16px;
+  }
+
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .badge {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .form {
+    gap: 14px;
+  }
+
+  input,
+  select {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .submitBtn {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .centerState h3 {
+    font-size: 18px;
+  }
+
+  .centerState p {
+    font-size: 14px;
+  }
+}
